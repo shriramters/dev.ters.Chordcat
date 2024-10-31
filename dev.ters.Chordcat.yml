@@ -10,6 +10,8 @@ finish-args:
   - --device=dri
   # Pulseaudio
   - --socket=pulseaudio
+rename-desktop-file: "chordcat.desktop"
+rename-icon: "chordcat"
 modules:
   - shared-modules/linux-audio/fluidsynth2.json
   - name: SFML
@@ -38,7 +40,7 @@ modules:
         url: https://archives.boost.io/release/1.86.0/source/boost_1_86_0.tar.gz
         sha256: 2575e74ffc3ef1cd0babac2c1ee8bdb5782a0ee672b1912da40e5b4b591ca01f
   - name: chordcat
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
       - "-DCMAKE_BUILD_TYPE=Release"
     sources:
